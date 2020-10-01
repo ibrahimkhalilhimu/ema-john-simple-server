@@ -8,6 +8,7 @@ require('dotenv').config()
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.huwqv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 // const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.huwqv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const port = 5000;
 
 const app = express()
 app.use(bodyParser.json())
@@ -67,4 +68,4 @@ client.connect(err => {
 
 
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || port)
